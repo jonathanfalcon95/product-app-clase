@@ -8,12 +8,13 @@ import { Component } from '@angular/core';
 export class ProductListComponent {
   selectedProduct: any;
   cartProducts: any[] = [];
+  cardQuantity: number = 0;
   products = [{
     id: 1,
     name: 'Iphone 14',
     description: 'El mejor celular del mundo',
     price: 1500,
-    stock: 0,
+    stock: 15,
     image: 'https://www.citypng.com/public/uploads/preview/iphone-14-pro-and-max-deep-purple-png-11662587434zacaxkb4sd.png',
     color: 'grey'
   },
@@ -48,7 +49,19 @@ export class ProductListComponent {
   ];
 
   handleProductSelected(product: any) {
-    this.cartProducts.push(product);
+    const existingProduct = this.cartProducts.findIndex((item) => item.id === product.id); // -1
+    if (existingProduct !== -1) {
+      this.cartProducts[existingProduct].quantity++;
+    }
+    else {
+      product.quantity = 1;
+      this.cartProducts.push(product);
+    }
+    this.cardQuantity = 0;
+    this.cartProducts.forEach((item) => {
+      this.cardQuantity += item.quantity;
+    });
+    console.log(this.cartProducts);
     //alert('Producto seleccionado: ' + product.name);
   }
 }

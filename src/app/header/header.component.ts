@@ -8,6 +8,7 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 export class HeaderComponent implements OnInit {
   faCartShopping = faCartShopping;
   @Input() cartCount: number = 0;
+  @Input() cartProducts: any[] = [];
   showModal: boolean = false;
 
   constructor() { }

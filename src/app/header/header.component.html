@@ -11,7 +11,18 @@
       <div class="modal-content">
         <span class="close-button" (click)="closeCartModal()">&times;</span>
         <p>Listado de productos en el carrito</p>
-        <!-- Aquí podrías listar los productos en el carrito -->
+          <ul>
+            <li *ngFor="let product of cartProducts">
+              <div class="cart-product">
+                <img [src]="product.image" [alt]="product.name" width="50" height="50"  />
+                <div class="cart-product-details">
+                  <h2>{{ product.name  }}</h2>
+                  <p><strong>Price:</strong> {{ product.price | currency }}</p>
+                  <p><strong>Quantity:</strong> {{ product.quantity }}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
       </div>
     </div>
   </header>
