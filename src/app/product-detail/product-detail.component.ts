@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class ProductDetailComponent {
   @Input() product: any;
   @Output() productSelected: EventEmitter<any> = new EventEmitter();
-
+  colorStock: string = 'blue';
   selectProduct() {
     this.productSelected.emit(this.product);
   }

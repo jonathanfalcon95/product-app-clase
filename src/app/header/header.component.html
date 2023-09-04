@@ -1,0 +1,18 @@
+<header class="header-container">
+    <h1>Tienda</h1>
+    <div class="cart-section">
+      <fa-icon [icon]="faCartShopping" (click)="openCartModal()"></fa-icon>
+      <div> Items en el carrito: {{cartCount}}</div>
+      <!-- <fa-icon [icon]="fas fa-shopping-cart"></fa-icon> -->
+      <i class="far fa-cart-plus"></i>
+    </div>
+    <!-- Modal -->
+    <div class="modal" [ngClass]="{'show-modal': showModal}">
+      <div class="modal-content">
+        <span class="close-button" (click)="closeCartModal()">&times;</span>
+        <p>Listado de productos en el carrito</p>
+        <!-- Aquí podrías listar los productos en el carrito -->
+      </div>
+    </div>
+  </header>
+  
