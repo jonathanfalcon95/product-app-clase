@@ -16,7 +16,14 @@ export class ProductListComponent {
     price: 1500,
     stock: 15,
     image: 'https://www.citypng.com/public/uploads/preview/iphone-14-pro-and-max-deep-purple-png-11662587434zacaxkb4sd.png',
-    color: 'grey'
+    color: 'grey',
+    spects: `PROGRAM DETAILS: When you add this offer to cart, it will reflect 3 items: the iPhone, SIM kit, and carrier subscription
+    Ceramic Shield, tougher than any smartphone glass
+    A14 Bionic chip, the fastest chip ever in a smartphone
+    LiDAR Scanner for improved AR experiences, Night mode portraits
+    12MP TrueDepth front camera with Night mode, 4K Dolby Vision HDR recording
+    Industry-leading IP68 water resistance
+    Supports MagSafe accessories for easy attachment and faster wireless charging`
   },
   {
     id: 2,
@@ -25,7 +32,14 @@ export class ProductListComponent {
     price: 1200,
     stock: 1,
     image: 'https://w7.pngwing.com/pngs/108/8/png-transparent-samsung-galaxy-s21-ultra-electronics-android-phones-thumbnail.png',
-    color: 'green'
+    color: 'green',
+    spects: `PROGRAM DETAILS: When you add this offer to cart, it will reflect 3 items: the iPhone, SIM kit, and carrier subscription
+    Ceramic Shield, tougher than any smartphone glass
+    A14 Bionic chip, the fastest chip ever in a smartphone
+    LiDAR Scanner for improved AR experiences, Night mode portraits
+    12MP TrueDepth front camera with Night mode, 4K Dolby Vision HDR recording
+    Industry-leading IP68 water resistance
+    Supports MagSafe accessories for easy attachment and faster wireless charging`
   },
   {
     id: 3,
@@ -34,7 +48,14 @@ export class ProductListComponent {
     price: 1000,
     stock: 8,
     image: 'https://themayanagari.com/wp-content/uploads/2021/04/mi-11-2.jpg',
-    color: 'red'
+    color: 'red',
+    spects: `PROGRAM DETAILS: When you add this offer to cart, it will reflect 3 items: the iPhone, SIM kit, and carrier subscription
+    Ceramic Shield, tougher than any smartphone glass
+    A14 Bionic chip, the fastest chip ever in a smartphone
+    LiDAR Scanner for improved AR experiences, Night mode portraits
+    12MP TrueDepth front camera with Night mode, 4K Dolby Vision HDR recording
+    Industry-leading IP68 water resistance
+    Supports MagSafe accessories for easy attachment and faster wireless charging`
   },
   {
     id: 4,
@@ -43,7 +64,14 @@ export class ProductListComponent {
     price: 900,
     stock: 5,
     image: 'https://storage.comprasmartphone.com/smartphones/huawei-p40.png',
-    color: 'blue'
+    color: 'blue',
+    spects: `PROGRAM DETAILS: When you add this offer to cart, it will reflect 3 items: the iPhone, SIM kit, and carrier subscription
+    Ceramic Shield, tougher than any smartphone glass
+    A14 Bionic chip, the fastest chip ever in a smartphone
+    LiDAR Scanner for improved AR experiences, Night mode portraits
+    12MP TrueDepth front camera with Night mode, 4K Dolby Vision HDR recording
+    Industry-leading IP68 water resistance
+    Supports MagSafe accessories for easy attachment and faster wireless charging`
   }
 
   ];
