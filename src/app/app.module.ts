@@ -16,6 +16,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import {FormsModule} from '@angular/forms';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductFormComponent } from './product-form/product-form.component';
+import { ProductTableComponent } from './product-table/product-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +33,9 @@ import { ProductDescriptionComponent } from './product-description/product-descr
     HeaderComponent,
     ReverseStringPipe,
     LoginComponent,
-    ProductDescriptionComponent
+    ProductDescriptionComponent,
+    ProductFormComponent,
+    ProductTableComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +46,14 @@ import { ProductDescriptionComponent } from './product-description/product-descr
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    MatSelectModule,
+    MatIconModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
