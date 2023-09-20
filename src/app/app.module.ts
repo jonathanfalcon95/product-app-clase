@@ -25,6 +25,8 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DeleteProductDialog } from './product-table/product-table.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,8 @@ import { MatCardModule } from '@angular/material/card';
     LoginComponent,
     ProductDescriptionComponent,
     ProductFormComponent,
-    ProductTableComponent
+    ProductTableComponent,
+    DeleteProductDialog 
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import { MatCardModule } from '@angular/material/card';
     MatSortModule,
     MatPaginatorModule,
     MatTableModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

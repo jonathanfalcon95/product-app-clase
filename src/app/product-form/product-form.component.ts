@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { ApiService } from '../api.service';
 @Component({
   selector: 'app-product-form',
   templateUrl: './product-form.component.html',
@@ -8,8 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductFormComponent implements OnInit {
 productForm: FormGroup;
-
-  constructor(private fb: FormBuilder, private route: ActivatedRoute) {
+action: string = 'new';
+product: any;
+  constructor(private fb: FormBuilder, private route: ActivatedRoute, private location: Location, private apiService: ApiService) {
     this.productForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       price: ['', [Validators.required, Validators.min(0)]],
@@ -23,12 +26,76 @@ productForm: FormGroup;
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       console.log(params);
-  
+      this.action = params.action;
+      if(this.action !=='create' && params.data){
+       this.product = JSON.parse(params.data);
+         this.productForm.patchValue({
+            name: this.product.name || '',
+            price: this.product.price || '',
+            stock: this.product.stock || '',
+            image: this.product.image || '',
+            description: this.product.description || ''
+          });
+      }
+
+      if(this.action == 'show'){
+        this.productForm.disable();
+      }
        //this.product = JSON.parse(params.data);
       });
     }
-  
+    onCancel(){ 
+      this.location.back();
+    }
+  getNameTitle(){
+    if(this.action == 'create'){
+      return 'Nuevo Producto';
+    }else
+    if(this.action == 'show'){
+      return 'Ver Producto';
+    }
+    else{
+      return 'Editar Producto';
+    }
+  }
+  getButtonTitle(){
+    if(this.action == 'create'){
+      return 'Crear Producto';
+    }else
+   {
+      return 'Editar Producto';
+    }
+  }
   onSubmit(){
-
+    let body={}
+    if(this.action == 'create'){
+      body={
+          title: this.productForm.value.name,
+          price: this.productForm.value.price,
+          description: this.productForm.value.description,
+          image: this.productForm.value.image,
+          category: ''
+      }
+      this.apiService.createProduct(body).subscribe((data)=>{
+        console.log(data);
+        alert('Producto creado');
+        this.location.back();
+      });
+    }
+    else
+    if(this.action == 'edit'){
+      body={
+        title: this.productForm.value.name,
+        price: this.productForm.value.price,
+        description: this.productForm.value.description,
+        image: this.productForm.value.image,
+        category: ''
+      }
+      this.apiService.updateProduct(this.product.id, body).subscribe((data)=>{
+        alert('Producto Actualizado');
+        this.location.back();
+        console.log(data);
+      });
+    }
   }
 }
